@@ -1,0 +1,24 @@
+﻿<meta chraset="utf-8">
+<script type="text/javascript">
+	alert("Давайте поиграем: я загадаю целое число от 1 до 100, а Вы пробуете его угадать. Начнём?");
+
+	var answer = parseInt(Math.random() * 100) + 1;
+
+while (answerUser != answer){
+	var answerUser = parseInt(prompt("Введите число: "));
+	if (answerUser >= 1 & answerUser <= 100){
+		if (answerUser == answer){
+			alert("Вы угадали!");
+			break;
+		} else if (answerUser < answer){
+			alert("Ваше число меньше!");
+			continue;
+		} else if (answerUser > answer) {
+			alert("Ваше число больше!");
+			continue;
+		}
+		} else{
+			alert('Увы! Я же сказал, что моё число будет от 1 до 100!')
+		}
+	}
+</script>

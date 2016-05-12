@@ -1,0 +1,98 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Личный сайт студента Калашникова А.И.</title>
+
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+
+<script type="text/javascript">
+	function guessGame(){
+	
+		var answer = parseInt(Math.random() * 100) + 1;
+		var sum = 0;
+
+		while (answerUser != answer){
+			var answerUser = prompt("Введите целое число: ");
+			if ((answerUser.toLowerCase() == "q") || (answerUser.toLowerCase() == "в")){
+				if (sum == 0){
+					alert( 'Очень жаль, что Вы даже не попробовали! Пока-пока!');
+				}
+				else{
+					alert( 'Вы использовали ' + sum + ' попыток, но ничего не угадали.');
+				}
+				break;
+			}
+			answerUser = parseInt(answerUser);
+			if (answerUser >= 1 & answerUser <= 100){
+				if (answerUser == answer){
+					alert("Вы угадали! \n \n Для этого Вы использовали " + sum + ' попыток.');
+					break;
+				} else if (answerUser < answer){
+					alert('Ваше число меньше! \n \n Для выхода введите "q" или "в" (регистр не имеет значения).');
+					sum++;
+					continue;
+				} else if (answerUser > answer) {
+					alert('Ваше число больше! \n \n Для выхода введите "q" или "в" (регистр не имеет значения).');
+					sum++;
+					continue;
+				}
+			} else{
+				alert('Увы! Я же сказал, что моё число будет от 1 до 100! \n \n Для выхода введите "q" или "в" (регистр не имеет значения).');
+			}
+		}
+	}
+</script>
+
+
+</script>>
+
+
+</head>
+<body>
+
+<div id="tooplate_body_wrapper" />
+<div id="tooplate_wrapper" />
+<div id="tooplate_header">
+	<div id="site_title">
+		<h1><a href="http://a-kalashnikov.sosh1-12.org" target="_block">Калашников А.И.</a></h1>
+	</div>
+	<div id="tooplate_menu">
+		<ul>
+			<li><a href="index.html">Главная</a></li>
+			<li><a href="puzzle.html">Загадки</a></li>
+			<li><a href="guess.html">Угадайка</a></li>
+		</ul>    	
+	</div>
+</div>
+    
+<div id="content_box">
+		
+	<div id="content_title">
+		<h2>Угадай число</h2>
+	</div>
+	<div id="content">
+		
+		<h3>Угадай число!</h3>
+		
+		<p>Давайте поиграем: я загадаю целое число от 1 до 100, а Вы пробуете его угадать. Начнём?<p/>
+
+		<p>Но сначала немного о <b>правилах игры</b>:</p>
+		<ol>
+			<li>Компьютер загадывает целое число от 1 до 100.</li>
+			<li>У Вас неограниченное число попыток.</li>
+			<li>Если вы желаете прервать игру введите "q" или "в" (регистр не имеет значения).</li>
+		</ol>
+		
+		<input type="button" value="Начать" onClick="guessGame()"/>
+
+	</div>
+           
+    <div id="tooplate_footer">    
+       Copyright © 2016 <a href="http://a-kalashnikov.sosh1-12.org" target="_block">Артем Калашников</a>
+    </div>
+    
+</div> <!-- end of warpper -->
+
+</body>
+</html>
